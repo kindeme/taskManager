@@ -6,13 +6,13 @@
      <title>Task Manager with PHP Mysql</title>
 </head>
 <body>
+<h1> TASK MANAGER</h1>
 <a href="index.php">Home</a>
-    <h1>MANAGE LISTs PAGE</h1>
+    <h4>Manage lists page</h4>
     
     <!-- Table to display lists -->
-    <div class='all-lists'>
     <a href="add-list.php"> add list</a>
-   
+    <div class='all-lists'>
     <table>
             <tr>
                     <th> S.N</th>
