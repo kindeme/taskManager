@@ -31,11 +31,11 @@ include('config/constants.php');
 <table>
 <tr>
     <td> List Name :</td>
-    <td> <input type="text" name="list_name" placeholder="Type list name here" /> </td>
+    <td> <input type="text" name="list_name" placeholder="Type list name here" required/> </td>
 </tr>
         <tr>
             <td> List Description :</td>
-            <td> <textarea name="list_description" placeholder="Type list Description here"></textarea></td>
+            <td> <textarea name="list_description" placeholder="Type list Description here" required></textarea></td>
         </tr>
         <tr>
             <td><input type="submit" name="submit" value="Save" /></td>
