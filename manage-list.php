@@ -1,3 +1,6 @@
+<?php
+include('config/constants.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,11 +10,11 @@
 </head>
 <body>
 <h1> TASK MANAGER</h1>
-<a href="index.php">Home</a>
+<a href="<?php echo SITEURL; ?>">Home</a>
     <h4>Manage lists page</h4>
     
     <!-- Table to display lists -->
-    <a href="add-list.php"> add list</a>
+    <a href="<?php echo SITEURL; ?>"> add list</a>
     <div class='all-lists'>
     <table>
             <tr>

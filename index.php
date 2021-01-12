@@ -1,3 +1,6 @@
+<?php
+include('config/constants.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +12,7 @@
 <h1> TASK MANAGER</h1>
 <!-- Menu start -->
 <div class="menu">
-<a href="index.php"> Home</a>
+<a href="<?php echo SITEURL; ?>"> Home</a>
 <a href="#"> To Do</a>
 <a href="#"> Doing</a>
 <a href="#"> Done</a>
