@@ -13,7 +13,19 @@ include('config/constants.php');
 <a href="<?php echo SITEURL; ?>">Home</a>
 <a href="<?php echo SITEURL; ?>">Manage lists</a>
 <h3>Add list Page</h3>
+<p> 
 
+<?php 
+ // check wheter the session is created or not
+ if(isset($_SESSION['add_fail']))
+ {
+     echo $_SESSION['add_fail'];
+     //remove the message after displaying once
+     unset($_SESSION['add_fail']);
+ }
+?>
+
+<p>
 <!-- form start -->
 <form action="" method="post">
 <table>
@@ -40,7 +52,7 @@ if(isset($_POST['submit'])){
 
     $list_name = $_POST['list_name'];
     $list_description = $_POST['list_description'];
-}
+
 // connect the database 
 $conn = mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD) or die(mysqli_error());
 
@@ -50,7 +62,30 @@ $conn = mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD) or die(mysqli_error())
 // }
 //select database
 $db_select = mysqli_select_db($conn, DB_NAME);
-If($db_select){
-    echo"database selected";
+
+$sql= "INSERT INTO tbl_lists SET 
+list_name ='$list_name',
+list_description = '$list_description' ";
+
+$res = mysqli_query($conn, $sql);
+
+if($res){
+    // echo "data Inserted";
+    // redirect 
+    //Create session variable to display message
+    $_SESSION['add'] = "list added succesfully";
+
+    header('location:'.SITEURL.'manage-list.php');
+    
+
+
+
+}else{
+    // echo"Failed to insert data";
+     //Create session variable to display message
+    $_SESSION['add_fail'] = "Failed to Add List";
+    header('location:'.SITEURL.'add-list.php');
 }
+}
+
 ?>

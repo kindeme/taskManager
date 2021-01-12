@@ -14,7 +14,7 @@ include('config/constants.php');
     <h4>Manage lists page</h4>
     
     <!-- Table to display lists -->
-    <a href="<?php echo SITEURL; ?>"> add list</a>
+    <a href="add-list.php"> add list</a>
     <div class='all-lists'>
     <table>
             <tr>
