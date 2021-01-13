@@ -21,6 +21,24 @@ include('config/constants.php');
      //remove the message after displaying once
     unset($_SESSION['add']);
  }
+
+ // Check the session for delete
+
+  if(isset($_SESSION['delete']))
+ {
+     echo $_SESSION['delete'];
+     //remove the message after displaying once
+    unset($_SESSION['delete']);
+ }
+//Xheck for delete fail
+
+   if(isset($_SESSION['delete_fail']))
+ {
+     echo $_SESSION['delete_fail'];
+     //remove the message after displaying once
+    unset($_SESSION['delete_fail']);
+ }
+
 ?>
     <!-- Table to display lists -->
     <a href="add-list.php"> add list</a>
@@ -62,7 +80,7 @@ $res = mysqli_query($conn, $sql);
                 <td><?php echo $list_name ;?></td>
                 <td>
                     <a href="#">Update</a>
-                    <a href="#">Delete</a>
+                    <a href="<?php echo SITEURL;?>delete-list.php?list_id=<?php echo $list_id ?>">Delete</a>
                 </td>
             </tr>
      <?php
@@ -78,9 +96,7 @@ $res = mysqli_query($conn, $sql);
      }
  }
 
-?>
-
-            
+?>            
              <tr>
                 <td> 2.</td>
                 <td>Doing</td>
